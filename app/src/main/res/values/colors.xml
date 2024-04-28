@@ -2,4 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="backgroundColor">#FFFFFF</color> <!-- 页面背景色 -->
+    <color name="cardBackgroundColor">#FFFFFF</color> <!-- 卡片背景色 -->
+    <color name="cardStrokeColor">#E0E0E0</color> <!-- 卡片描边颜色 -->
+    <color name="textColorPrimary">#000000</color> <!-- 主要文本颜色 -->
+    <color name="textColorSecondary">#707070</color> <!-- 次要文本颜色 -->
 </resources>
