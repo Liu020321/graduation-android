@@ -51,6 +51,8 @@ public class MakeAppointmentActivity extends AppCompatActivity {
     private EditText editTextDescription;
     private RadioGroup radioGroupRevisit;
 
+    private TextView tv_back;//返回按钮
+
     private ArrayAdapter<String> departmentAdapter;
     private ArrayAdapter<String> doctorAdapter;
     private ArrayAdapter<String> timeAdapter;
@@ -153,6 +155,15 @@ public class MakeAppointmentActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 showDateTimePicker();
+            }
+        });
+
+        tv_back=findViewById(R.id.tv_back);
+        tv_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //返回键
+                MakeAppointmentActivity.this.finish();
             }
         });
     }

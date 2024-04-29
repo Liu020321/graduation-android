@@ -7,4 +7,5 @@
     <color name="cardStrokeColor">#E0E0E0</color> <!-- 卡片描边颜色 -->
     <color name="textColorPrimary">#000000</color> <!-- 主要文本颜色 -->
     <color name="textColorSecondary">#707070</color> <!-- 次要文本颜色 -->
+    <color name="blue">#5422B2</color>
 </resources>

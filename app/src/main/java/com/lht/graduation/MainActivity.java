@@ -1,5 +1,3 @@
-// MainActivity.java
-
 package com.lht.graduation;
 
 import android.content.Intent;
@@ -9,14 +7,21 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-import java.util.Calendar;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button btnMakeAppointment;
     private Button btnViewAppointments;
     private Button btnLogout; // 添加退出登录按钮
+    private ImageView imageViewLarge;
+    private TextView textViewWelcome;
+    private int[] imageArray = {R.mipmap.view1, R.mipmap.view2, R.mipmap.view3}; // 图片资源数组
+    private int currentIndex = 0; // 当前显示图片的索引
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +41,32 @@ public class MainActivity extends AppCompatActivity {
         btnMakeAppointment = findViewById(R.id.btnMakeAppointment);
         btnViewAppointments = findViewById(R.id.btnViewAppointments);
         btnLogout = findViewById(R.id.btnLogout); // 初始化退出按钮
+        imageViewLarge = findViewById(R.id.imageViewLarge);
+        textViewWelcome = findViewById(R.id.textViewWelcome);
+
+        // 启动定时器，每隔一段时间切换图片
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        // 切换到下一张图片
+                        currentIndex++;
+                        if (currentIndex >= imageArray.length) {
+                            currentIndex = 0; // 如果到达最后一张图片，重新从第一张开始
+                        }
+                        // 更新ImageView中的图片
+                        imageViewLarge.setImageResource(imageArray[currentIndex]);
+                    }
+                });
+            }
+        }, 0, 3000); // 每隔3秒切换一次图片，可以根据需要调整间隔时间
+
+        // 启用欢迎文字的循环滚动效果
+        textViewWelcome.setSelected(true);
+        textViewWelcome.setMarqueeRepeatLimit(-1);
 
         btnMakeAppointment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,5 +128,4 @@ public class MainActivity extends AppCompatActivity {
         startActivity(loginIntent);
         finish(); // 结束当前活动，防止用户通过返回键回到主界面
     }
-
 }

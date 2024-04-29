@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +30,7 @@ public class ViewAppointmentActivity extends AppCompatActivity {
 
     private Spinner spinnerPage;
     private ListView listViewAppointments;
+    private TextView tv_back;//返回按钮
     private ArrayAdapter<String> pageAdapter;
     private ArrayAdapter<String> appointmentAdapter;
     private ArrayList<String> appointmentList;
@@ -63,6 +65,14 @@ public class ViewAppointmentActivity extends AppCompatActivity {
 
         // 初始化页面，默认加载第一页的预约信息
         loadAppointments(1);
+        tv_back=findViewById(R.id.tv_back);
+        tv_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //返回键
+                ViewAppointmentActivity.this.finish();
+            }
+        });
     }
 
     // 加载总页数和当前页数到下拉框

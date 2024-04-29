@@ -2,206 +2,174 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+    android:layout_height="match_parent">
     <!-- 创建一个包裹所有内容的布局容器 -->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/contentLayout"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:background="#39ACC9"
+        android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- 部门标题和Spinner -->
-        <TextView
-            android:id="@+id/textViewDepartment"
-            android:layout_width="wrap_content"
+        <include layout="@layout/main_title_bar"></include>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+        <!-- 大图展示区域 -->
+        <ImageView
+            android:id="@+id/imageViewLarge"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:text="选择部门："
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:scaleType="centerCrop"
+            android:layout_marginTop="50dp"
+            app:layout_constraintDimensionRatio="H,16:9"
+            android:src="@mipmap/view3"/>
 
         <Spinner
             android:id="@+id/spinnerDepartment"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/edittext_background"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewDepartment"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="35dp"
+            android:background="@drawable/edittext_style"
+            android:drawableLeft="@android:color/darker_gray"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewDepartment"
-            app:layout_constraintTop_toTopOf="@+id/textViewDepartment" />
+            />
 
-
-        <!-- 医生标题和Spinner -->
-        <TextView
-            android:id="@+id/textViewDoctor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp"
-            android:text="选择医生："
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerDepartment" />
 
         <Spinner
             android:id="@+id/spinnerDoctor"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/edittext_background"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewDoctor"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewDoctor"
-            app:layout_constraintTop_toTopOf="@+id/textViewDoctor" />
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="35dp"
+            android:background="@drawable/edittext_style"
+            android:drawableLeft="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent" />
 
 
-        <!-- 时间标题和Spinner -->
-        <TextView
-            android:id="@+id/textViewTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp"
-            android:text="可预约时间："
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerDoctor" />
 
         <Spinner
             android:id="@+id/spinnerTime"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/edittext_background"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewTime"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewTime"
-            app:layout_constraintTop_toTopOf="@+id/textViewTime" />
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="35dp"
+            android:background="@drawable/edittext_style"
+            android:drawableLeft="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent" />
 
 
         <!-- 是否复诊标题和RadioGroup -->
-        <TextView
-            android:id="@+id/textViewRevisit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp"
-            android:text="是否复诊："
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerTime" />
-
-        <RadioGroup
-            android:id="@+id/radioGroupRevisit"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp"
+        <LinearLayout
+            android:id="@+id/linearLayoutRevisit"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="35dp"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewRevisit"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewRevisit"
-            app:layout_constraintTop_toTopOf="@+id/textViewRevisit">
-
-            <RadioButton
-                android:id="@+id/radioButtonYes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="是"
-                android:textSize="16sp" />
-
-            <RadioButton
-                android:id="@+id/radioButtonNo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:text="否"
-
-                android:textSize="16sp" />
-
-        </RadioGroup>
-
-        <!-- 日期时间标题 -->
-        <TextView
-            android:id="@+id/textViewDateTimeTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp"
-            android:text="预约时间："
-            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroupRevisit" />
+            app:layout_constraintTop_toBottomOf="@id/spinnerTime">
+
+            <!-- 是否复诊标题 -->
+            <TextView
+                android:id="@+id/textViewRevisit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="是否复诊："
+                android:textSize="18sp" />
+
+            <!-- 是否复诊RadioGroup -->
+            <RadioGroup
+                android:id="@+id/radioGroupRevisit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButtonYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="否"
+                    android:textSize="16sp" />
+
+            </RadioGroup>
+        </LinearLayout>
+
 
         <!-- 日期时间显示 -->
         <TextView
             android:id="@+id/textViewDateTime"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp"
-            android:background="?attr/selectableItemBackground"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="35dp"
+            android:background="@drawable/edittext_style"
+            android:drawableLeft="@android:color/darker_gray"
             android:clickable="true"
             android:focusable="true"
-            android:text="点击选择日期和时间"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewDateTimeTitle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewDateTimeTitle"
-            app:layout_constraintTop_toTopOf="@+id/textViewDateTimeTitle" />
-
-
-        <!-- 病情描述标题和EditText -->
-        <TextView
-            android:id="@+id/textViewDescription"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp"
-            android:text="病情描述："
+            android:text="点击选择预约日期和时间"
             android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewDateTime" />
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
 
         <EditText
             android:id="@+id/editTextDescription"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/edittext_background"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="35dp"
+            android:background="@drawable/edittext_style"
+            android:drawableLeft="@android:color/darker_gray"
             android:hint="请输入病情描述"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewDescription"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewDescription"
-            app:layout_constraintTop_toTopOf="@+id/textViewDescription" />
-
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <!-- 预约挂号按钮 -->
-        <com.google.android.material.button.MaterialButton
+        <Button
             android:id="@+id/btnBookAppointment"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/rounded_rectangle_button"
-            android:text="预约挂号"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="35dp"
+            android:background="@drawable/button_style"
+            android:text="预 约"
             android:textColor="@android:color/white"
-            android:textSize="18sp"
-            app:backgroundTint="@android:color/holo_purple"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextDescription" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

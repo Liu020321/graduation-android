@@ -39,7 +39,6 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     implementation("com.squareup.okhttp3:okhttp:4.9.0")
     implementation("mysql:mysql-connector-java:8.0.27")
-    implementation("com.google.android.material:material:1.4.0")
 
 //    implementation("mysql:mysql-connector-java:5.1.49")
 

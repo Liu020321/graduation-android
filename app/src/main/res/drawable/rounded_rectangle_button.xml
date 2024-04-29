@@ -1,6 +1,6 @@
 <!-- res/drawable/rounded_rectangle_button.xml -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- 移除<solid>标签或者保持为空，如果你不需要设置背景颜色 -->
-    <!-- <solid android:color="#FF0000"/> -->
-    <corners android:radius="14dp"/> <!-- 调整这个值来改变圆角的大小 -->
+     <solid android:color="#49B1BF"/>
+    <corners android:radius="14dp"/>
 </shape>
