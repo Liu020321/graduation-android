@@ -86,7 +86,7 @@ public class ViewAppointmentActivity extends AppCompatActivity {
         }
 
         // 构建请求 URL
-        String url = BASE_URL + "phone_view_appointments?page=" + page + "&per_page=7"; // 每页显示7条数据
+        String url = BASE_URL + "/phone_view_appointments?page=" + page + "&per_page=7"; // 每页显示7条数据
 
         // 发送 HTTP 请求获取预约信息
         new Thread(() -> {
