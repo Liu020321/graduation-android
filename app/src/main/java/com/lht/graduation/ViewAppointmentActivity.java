@@ -25,7 +25,7 @@ import java.util.ArrayList;
 
 public class ViewAppointmentActivity extends AppCompatActivity {
 
-    private static final String BASE_URL = "http://192.168.162.99:5000/";
+    private static final String BASE_URL = "http://124.71.228.196";
 
     private Spinner spinnerPage;
     private ListView listViewAppointments;

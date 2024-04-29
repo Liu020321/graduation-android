@@ -60,7 +60,7 @@ public class MakeAppointmentActivity extends AppCompatActivity {
     private Map<String, Integer> doctorIdMap;
     private Map<String, String> doctorScheduleMap;
     // 服务器基础URL
-    private static final String BASE_URL = "http://192.168.162.99:5000";
+    private static final String BASE_URL = "http://124.71.228.196";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
