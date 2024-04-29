@@ -81,7 +81,7 @@
     <LinearLayout
         android:id="@+id/linearLayoutButtons"
         android:layout_width="308dp"
-        android:layout_height="59dp"
+        android:layout_height="70dp"
         android:layout_marginBottom="150dp"
         android:orientation="horizontal"
         android:weightSum="2"
